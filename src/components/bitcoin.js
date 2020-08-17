@@ -11,7 +11,8 @@ export default class Bitcoin extends Component {
       }
 
     componentDidMount() {
-        const url = 'http://localhost:8001/api/coin/bitcoin/price_chart?from=159746040&to=1597558837.83322';
+        // const url = 'http://localhost:8002/api/coin/bitcoin/price_chart?from=159746040&to=1597558837.83322';
+        const url = 'http://localhost:8002/api/coin/bitcoin/price_chart?days=3';
         fetch(url)
           .then(response => response.json())
           .then(bitcoinData => {
