@@ -11,8 +11,8 @@ export default class LineChart extends Component {
     }
   }
 
-  // UNSAFE_componentWillReceiveProps () {
-    // componentWillUpdate(){
+   //UNSAFE_componentWillReceiveProps () {
+     //componentWillUpdate(){
     componentWillMount(){
      const unsortedData = this.props.data;
     let dates = [];

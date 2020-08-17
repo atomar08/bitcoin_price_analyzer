@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import LineChart from './myChart';
+import DateTimeSelector from './datetime';
 
 export default class Bitcoin extends Component {
     constructor(props) {
@@ -12,7 +13,7 @@ export default class Bitcoin extends Component {
 
     componentDidMount() {
         // const url = 'http://localhost:8002/api/coin/bitcoin/price_chart?from=159746040&to=1597558837.83322';
-        const url = 'http://localhost:8002/api/coin/bitcoin/price_chart?days=3';
+        const url = 'http://localhost:8002/api/coin/bitcoin/price_chart?days=1';
         fetch(url)
           .then(response => response.json())
           .then(bitcoinData => {
@@ -32,6 +33,7 @@ export default class Bitcoin extends Component {
         <div className='mainDiv'>
           <h1>30 Day Bitcoin Price Chart</h1>
           <h3>Info Box</h3>
+          <DateTimeSelector/>
           { !this.state.fetchingData ? <LineChart  data={ this.state.data }/> : null }
         </div>
       </div>
