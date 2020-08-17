@@ -8,11 +8,13 @@ export default class Bitcoin extends Component {
         this.state = {
           fetchingData: true,
           data: [],
+          // start: moment(new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0,0,0,0)),
+          // end: moment(start).add(1, "days").subtract(1, "seconds"),
         }
       }
 
     componentDidMount() {
-        // const url = 'http://localhost:8002/api/coin/bitcoin/price_chart?from=159746040&to=1597558837.83322';
+        // const url = 'http://localhost:8002/api/coin/bitcoin/price_chart?from=this.state.start&to=this.state.end';
         const url = 'http://localhost:8002/api/coin/bitcoin/price_chart?days=1';
         fetch(url)
           .then(response => response.json())
@@ -31,8 +33,7 @@ export default class Bitcoin extends Component {
     return (
       <div className='main'>
         <div className='mainDiv'>
-          <h1>30 Day Bitcoin Price Chart</h1>
-          <h3>Info Box</h3>
+          <h1>Bitcoin Price Analyzer</h1>
           <DateTimeSelector/>
           { !this.state.fetchingData ? <LineChart  data={ this.state.data }/> : null }
         </div>

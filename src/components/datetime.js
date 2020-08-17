@@ -33,7 +33,7 @@ class DateTimeSelector extends React.Component {
             let ranges = {
                 "Today Only": [moment(start), moment(end)],
                 "Yesterday Only": [moment(start).subtract(1, "days"), moment(end).subtract(1, "days")],
-                "3 Days": [moment(start).subtract(3, "days"), moment(end)]
+                // "3 Days": [moment(start).subtract(3, "days"), moment(end)]
             }
             let local = {
                 "format":"MM-DD-YYYY HH:mm",
